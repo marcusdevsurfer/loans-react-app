@@ -1,9 +1,10 @@
+import { LoansGrid } from "./components/LoansGrid";
 
 function App() {
 
   return (
     <>
-      App
+      <LoansGrid/>
     </>
   )
 }
