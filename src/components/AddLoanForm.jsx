@@ -33,7 +33,7 @@ export const AddLoanForm = () => {
             "quantity": quantity,
             "percent": percent
         }
-        if(loan.person===''){
+        if (loan.person === '') {
             return
         }
 
@@ -45,25 +45,30 @@ export const AddLoanForm = () => {
     }
 
     return (
-        <form onSubmit={onFormSubmit} className='form w-50'>
-            <div className='mb-3'>
-                <label htmlFor="person">Persona</label>
-                <input value={person} type="text" className='form-control' id='person' onChange={e => setPerson(e.target.value)} />
-            </div>
+        <>
+            <h1 className="mb-3">Agregar</h1>
+            <form onSubmit={onFormSubmit} className='form w-50'>
+                <div className='mb-3'>
+                    <label htmlFor="person">Persona</label>
+                    <input value={person} type="text" className='form-control' id='person' onChange={e => setPerson(e.target.value)} />
+                </div>
 
-            <div className='mb-3'>
-                <label htmlFor="quantity">Cantidad</label>
-                <input value={quantity} type="number" className='form-control' id='quantity' onChange={e => setQuantity(e.target.value)} />
-            </div>
+                <div className='mb-3'>
+                    <label htmlFor="quantity">Cantidad</label>
+                    <input value={quantity} type="number" className='form-control' id='quantity' onChange={e => setQuantity(e.target.value)} />
+                </div>
 
-            <div className='mb-3'>
-                <label htmlFor="percent">Porciento de Interes</label>
-                <input value={percent} type="number" className='form-control' id='percent' onChange={e => setPercent(e.target.value)} />
-            </div>
+                <div className='mb-3'>
+                    <label htmlFor="percent">Porciento de Interes</label>
+                    <input value={percent} type="number" className='form-control' id='percent' onChange={e => setPercent(e.target.value)} />
+                </div>
 
-            <div className='mb-3'>
-                <button type='submit' className='btn btn-success'>Agregar</button>
-            </div>
-        </form>
+                <div className='mb-3'>
+                    <button type='submit' className='btn btn-success'>Agregar</button>
+                </div>
+            </form>
+
+        </>
+
     )
 }
