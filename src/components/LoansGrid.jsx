@@ -35,10 +35,7 @@ export const LoansGrid = () => {
                 <LoansTitle />
                 {
                     loansData.map(loan => (
-                        <div key={loan.loanId}>
-                            <h3>{loan?.person}</h3>
-                            <p>{loan?.quantity}</p>
-                        </div>
+                        <Loan key={loan.loanId} loan={loan}/>
                     ))
                 }
             </div >
