@@ -1,10 +1,13 @@
+import { Actions } from "./components/Actions";
+import { AddLoanForm } from "./components/AddLoanForm";
 import { LoansGrid } from "./components/LoansGrid";
 
 function App() {
 
   return (
     <>
-      <LoansGrid/>
+      <AddLoanForm />
+      <LoansGrid />
     </>
   )
 }
