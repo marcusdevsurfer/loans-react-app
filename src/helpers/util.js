@@ -2,9 +2,12 @@
 //Production URL
 //loans-api-production.up.railway.app/loans
 
+//DEV
+//http://localhost:8080/loans'
+
 export const request = async () => {
     try {
-        const response = await fetch('http://localhost:8080/loans')
+        const response = await fetch('loans-api-production.up.railway.app/loans')
         const data = await response.json()
         return data
     }
