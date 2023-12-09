@@ -28,6 +28,7 @@ export const AddLoanForm = () => {
 
 
     const onFormSubmit = (e) => {
+        e.preventDefault()
         const loan = {
             "person": person,
             "quantity": quantity,
