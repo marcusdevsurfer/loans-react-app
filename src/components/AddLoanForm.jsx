@@ -38,7 +38,7 @@ export const AddLoanForm = () => {
             return
         }
 
-        postData('https://loans-api-production.up.railway.app/loans', loan)
+        postData('http://localhost:8080/loans', loan)
             .then(data => {
                 console.log(data); // JSON data parsed by `data.json()` call
             });

@@ -5,7 +5,7 @@ export const Loan = ({ loan }) => {
 
   const deleteLoan = (e) => {
 
-    fetch('https://loans-api-production.up.railway.app/loans/' + e.target.value, {
+    fetch('http://localhost:8080/loans/' + e.target.value, {
       method: 'DELETE',
       mode: 'cors', // no-cors, *cors, same-origin
             cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached

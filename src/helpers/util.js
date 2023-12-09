@@ -7,7 +7,7 @@
 
 export const request = async () => {
     try {
-        const response = await fetch('https://loans-api-production.up.railway.app/loans')
+        const response = await fetch('http://localhost:8080/loans')
         const data = await response.json()
         return data
     }
