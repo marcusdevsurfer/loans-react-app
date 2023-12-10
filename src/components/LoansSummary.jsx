@@ -20,7 +20,7 @@ export const LoansSummary = ({ data }) => {
                 }}>{data.length}</span></p>
             </div>
             <div>
-                <p>Total: <span className='bg-secondary' style={{
+                <p>Total: <span className='bg-success' style={{
                     paddingLeft: '1rem',
                     paddingRight: '1rem',
                     color: 'white'
