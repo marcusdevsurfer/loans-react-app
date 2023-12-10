@@ -6,8 +6,12 @@ const LoansTitle = () => (
     <h1>Prestamos Activos</h1>
 )
 
+const LoadingLoans = () => (
+    <h2>Cargando..</h2>
+)
+
 const NotExistLoansMessage = () => (
-    <h1>No existen prestamos registrados.</h1>
+    <h2>No existen registros.</h2>
 )
 
 export const LoansGrid = () => {
@@ -31,17 +35,21 @@ export const LoansGrid = () => {
     return (
         isLoaded
             ?
-            <div>
-                <LoansTitle />
-                {
-                    loansData.map(loan => (
-                        <Loan key={loan.loanId} loan={loan}/>
-                    ))
-                }
-            </div >
+            loansData.length > 0
+                ?
+                <div>
+                    <LoansTitle />
+                    {
+                        loansData.map(loan => (
+                            <Loan key={loan.loanId} loan={loan} />
+                        ))
+                    }
+                </div >
+                :
+                <NotExistLoansMessage />
             :
             <div>
-               <NotExistLoansMessage/>
+                <LoadingLoans />
             </div>
     )
 }
