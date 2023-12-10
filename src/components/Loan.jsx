@@ -7,26 +7,31 @@ export const Loan = ({ loan }) => {
 
     fetch('http://localhost:8080/loans/' + e.target.value, {
       method: 'DELETE',
-      mode: 'cors', // no-cors, *cors, same-origin
-            cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-            credentials: 'same-origin', // include, *same-origin, omit
-            headers: {
-                'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            redirect: 'follow', // manual, *follow, error
-            referrerPolicy: 'no-referrer',
+      mode: 'cors',
+      cache: 'no-cache',
+      credentials: 'same-origin',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      redirect: 'follow',
+      referrerPolicy: 'no-referrer',
     })
-      .then(res => res.text()) // or res.json()
-      .then(res => window.location.reload())
-      
+      .then(res => {
+        window.location.reload()
+      })
+
   }
 
   return (
-    <div className="mb-3" key={loanId}>
-      <h3>{person}</h3>
-      <p>{quantity}</p>
-      <button value={loanId} className="btn btn-danger" onClick={deleteLoan}>Borrar</button>
+    <div className="mb-3 d-flex align-items-center justify-content-around" key={loanId}>
+      <div className="p-1">
+        <h3>{person}</h3>
+        <p>{quantity}</p>
+      </div>
+      <div className="p-1">
+        <button value={loanId} className="btn btn-sm btn-danger" onClick={deleteLoan}>Borrar</button>
+      </div>
+
     </div>
   )
 }
