@@ -5,10 +5,10 @@ import { LoansGrid } from "./components/LoansGrid";
 function App() {
 
   return (
-    <>
+    <div className="d-flex flex-column align-items-center">
       <AddLoanForm />
       <LoansGrid />
-    </>
+    </div>
   )
 }
 
