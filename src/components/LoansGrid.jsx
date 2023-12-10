@@ -1,22 +1,13 @@
 import { useEffect, useState } from "react"
 import { Loan } from "./Loan"
 import { request } from "../helpers/util"
+import { LoansSummary } from "./LoansSummary"
 
 const LoansTitle = ({ data }) => (
     data.length > 0
         ?
-        <div className="d-flex align-items-center">
-
-            <h2 className="me-2">Prestamos activos</h2>
-
-            <div className="bg-secondary text-center" style={{
-                width: '3rem',
-                borderRadius: '10%',
-                color: 'white'
-            }}>
-                {data.length}
-            </div>
-
+        <div className="text-center">
+            <h2>Prestamos</h2>
         </div>
         :
         null
@@ -55,6 +46,7 @@ export const LoansGrid = () => {
                 ?
                 <div>
                     <LoansTitle data={loansData} />
+                    <LoansSummary data={loansData} />
                     {
                         loansData.map(loan => (
                             <Loan key={loan.loanId} loan={loan} />
