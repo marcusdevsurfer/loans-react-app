@@ -23,7 +23,7 @@ export const Loan = ({ loan }) => {
   }
 
   return (
-    <div className="mb-3 d-flex align-items-center justify-content-around" key={loanId}>
+    <div className="mb-3 d-flex  justify-content-around" key={loanId}>
       <div className="p-1">
         <h3>{person}</h3>
         <p>{quantity}</p>
