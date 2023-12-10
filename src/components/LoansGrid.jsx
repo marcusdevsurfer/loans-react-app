@@ -2,16 +2,32 @@ import { useEffect, useState } from "react"
 import { Loan } from "./Loan"
 import { request } from "../helpers/util"
 
-const LoansTitle = () => (
-    <h1>Prestamos Activos</h1>
+const LoansTitle = ({ data }) => (
+    data.length > 0
+        ?
+        <div className="d-flex align-items-center">
+
+            <h2 className="me-2">Prestamos activos</h2>
+
+            <div className="bg-secondary text-center" style={{
+                width: '3rem',
+                borderRadius: '10%',
+                color: 'white'
+            }}>
+                {data.length}
+            </div>
+
+        </div>
+        :
+        null
 )
 
 const LoadingLoans = () => (
     <h2>Cargando..</h2>
 )
 
-const NotExistLoansMessage = () => (
-    <h2>No existen registros.</h2>
+const NotExistLoansMessage = ({ data }) => (
+    <h2>No hay registros</h2>
 )
 
 export const LoansGrid = () => {
@@ -38,7 +54,7 @@ export const LoansGrid = () => {
             loansData.length > 0
                 ?
                 <div>
-                    <LoansTitle />
+                    <LoansTitle data={loansData} />
                     {
                         loansData.map(loan => (
                             <Loan key={loan.loanId} loan={loan} />
