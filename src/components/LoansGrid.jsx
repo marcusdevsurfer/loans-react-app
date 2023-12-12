@@ -44,7 +44,7 @@ export const LoansGrid = () => {
             ?
             loansData.length > 0
                 ?
-                <div>
+                <div className="m-3">
                     <LoansTitle data={loansData} />
                     <LoansSummary data={loansData} />
                     {
