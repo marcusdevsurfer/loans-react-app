@@ -46,7 +46,7 @@ export const AddLoanForm = () => {
 
     return (
         <>
-            <h2 className="mb-3">Agregar</h2>
+            <h2 className="m-3">Agregar</h2>
             <form onSubmit={onFormSubmit} className='form w-50'>
                 <div className='mb-3'>
                     <label htmlFor="person">Persona</label>
