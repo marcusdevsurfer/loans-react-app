@@ -24,7 +24,7 @@ export const LoansSummary = ({ data }) => {
                     paddingLeft: '1rem',
                     paddingRight: '1rem',
                     color: 'white'
-                }}>{caltLoansTotal()}</span></p>
+                }}>${caltLoansTotal()}</span></p>
             </div>
         </div>
     )
