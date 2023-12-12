@@ -1,11 +1,13 @@
 
 export const Loan = ({ loan }) => {
 
+  const env = import.meta.env
+
   const { loanId, person, quantity } = loan
 
   const deleteLoan = (e) => {
 
-    fetch('http://localhost:8080/loans/' + e.target.value, {
+    fetch(env.VITE_BASE_URL+'loans/' + e.target.value, {
       method: 'DELETE',
       mode: 'cors',
       cache: 'no-cache',
