@@ -14,36 +14,39 @@ export const AddLoanForm = () => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data) 
+            body: JSON.stringify(data)
         });
-        return response.json();
+        return response;
     }
 
 
 
-     const onFormSubmit =  (e) => {
+    const onFormSubmit = (e) => {
+
         e.preventDefault()
+
         const loan = {
             person: person,
             quantity: quantity,
             percent: percent
         }
-        
-        if (loan.person === '') {
+
+        if (loan.person === '' || loan.quantity === 0) {
             return
         }
 
-        postData(env.VITE_BASE_URL+'loans', loan)
+        postData(env.VITE_BASE_URL + 'loans', loan)
             .then(data => {
-                console.log(data)
-                window.location.reload()
-            }).catch(e => console.log(e))
-
+                if (data.ok) {
+                    window.location.reload()
+                }
+            })
+            .catch(e => console.log(e))
     }
 
     return (
         <>
-            <h2 className="mb-3">Agregar</h2>
+            <h2 className="m-3">Agregar</h2>
             <form onSubmit={onFormSubmit} className='form w-50'>
                 <div className='mb-3'>
                     <label htmlFor="person">Persona</label>

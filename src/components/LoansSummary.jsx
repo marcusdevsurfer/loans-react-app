@@ -11,7 +11,7 @@ export const LoansSummary = ({ data }) => {
     }
 
     return (
-        <div className='d-flex justify-content-between'>
+        <div className='d-flex flex-column align-items-center justify-content-center'>
             <div>
                 <p>Activos: <span className='bg-secondary' style={{
                     paddingLeft: '1rem',
@@ -24,7 +24,7 @@ export const LoansSummary = ({ data }) => {
                     paddingLeft: '1rem',
                     paddingRight: '1rem',
                     color: 'white'
-                }}>{caltLoansTotal()}</span></p>
+                }}>${caltLoansTotal()}</span></p>
             </div>
         </div>
     )
