@@ -11,7 +11,7 @@ export const LoansSummary = ({ data }) => {
     }
 
     return (
-        <div className='d-flex justify-content-between'>
+        <div className='d-flex flex-column align-items-center justify-content-center'>
             <div>
                 <p>Activos: <span className='bg-secondary' style={{
                     paddingLeft: '1rem',
