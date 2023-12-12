@@ -6,8 +6,10 @@
 //http://localhost:8080/loans'
 
 export const request = async () => {
+    const env = import.meta.env
+    
     try {
-        const response = await fetch('http://localhost:8080/loans')
+        const response = await fetch(env.VITE_BASE_URL)
         const data = await response.json()
         return data
     }

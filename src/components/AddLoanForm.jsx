@@ -2,6 +2,9 @@ import { useState } from "react"
 
 export const AddLoanForm = () => {
 
+    const env = import.meta.env
+
+
     const [person, setPerson] = useState('')
     const [quantity, setQuantity] = useState(0)
     const [percent, setPercent] = useState(0)
@@ -36,7 +39,7 @@ export const AddLoanForm = () => {
             return
         }
 
-        postData('http://localhost:8080/loans', loan)
+        postData(env.VITE_BASE_URL+'loans', loan)
             .then(data => {
                 console.log(data)
             });
