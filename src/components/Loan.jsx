@@ -28,7 +28,7 @@ export const Loan = ({ loan }) => {
     <div className="mb-3 d-flex  justify-content-around" key={loanId}>
       <div className="p-1">
         <h3>{person}</h3>
-        <p>{quantity}</p>
+        <p>${quantity}</p>
       </div>
       <div className="p-1">
         <button value={loanId} className="btn btn-sm btn-danger" onClick={deleteLoan}>Borrar</button>
