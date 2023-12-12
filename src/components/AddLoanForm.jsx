@@ -11,6 +11,9 @@ export const AddLoanForm = () => {
     async function postData(url = '', data = {}) {
         const response = await fetch(url, {
             method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
             body: JSON.stringify(data) 
         });
         return response.json();
@@ -21,9 +24,9 @@ export const AddLoanForm = () => {
      const onFormSubmit =  (e) => {
         e.preventDefault()
         const loan = {
-            "person": person,
-            "quantity": quantity,
-            "percent": percent
+            person: person,
+            quantity: quantity,
+            percent: percent
         }
         
         if (loan.person === '') {
@@ -33,7 +36,7 @@ export const AddLoanForm = () => {
         postData(env.VITE_BASE_URL+'loans', loan)
             .then(data => {
                 console.log(data)
-            });
+            }).catch(e => console.log(e))
 
     }
 
