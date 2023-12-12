@@ -36,6 +36,7 @@ export const AddLoanForm = () => {
         postData(env.VITE_BASE_URL+'loans', loan)
             .then(data => {
                 console.log(data)
+                window.location.reload()
             }).catch(e => console.log(e))
 
     }
