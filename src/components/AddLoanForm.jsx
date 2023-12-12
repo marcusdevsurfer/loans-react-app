@@ -4,7 +4,6 @@ export const AddLoanForm = () => {
 
     const env = import.meta.env
 
-
     const [person, setPerson] = useState('')
     const [quantity, setQuantity] = useState(0)
     const [percent, setPercent] = useState(0)
@@ -12,15 +11,6 @@ export const AddLoanForm = () => {
     async function postData(url = '', data = {}) {
         const response = await fetch(url, {
             method: 'POST',
-            mode: 'cors',
-            cache: 'no-cache',
-            credentials: 'same-origin', 
-            headers: {
-                'Content-Type': 'application/json'
-      
-            },
-            redirect: 'follow',
-            referrerPolicy: 'no-referrer',
             body: JSON.stringify(data) 
         });
         return response.json();
@@ -29,6 +19,7 @@ export const AddLoanForm = () => {
 
 
      const onFormSubmit =  (e) => {
+        e.preventDefault()
         const loan = {
             "person": person,
             "quantity": quantity,
