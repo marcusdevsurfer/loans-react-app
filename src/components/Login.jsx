@@ -20,10 +20,10 @@ export const Login = () => {
     
 
     return (
-        <div className='container text-center'>
+        <div className='container d-flex flex-column align-items-center justify-content-center text-center' style={{'height': '100vh'}}>
             <h3>Iniciar sesión</h3>
             <form action="" onSubmit={validateLogin}>
-                <input className='form-control mb-3' value={username} name='username' id='username' onChange={(e) => setUsername(e.target.value)} type="text" />
+                <input className='form-control mb-3' value={username} name='username' id='username' onChange={(e) => setUsername(e.target.value)} type="text" placeholder="Usuario" />
                 <button className="btn btn-success " type="submit">Entrar</button>
             </form>
         </div>
