@@ -1,10 +1,3 @@
-
-//Production URL
-//loans-api-production.up.railway.app/loans
-
-//DEV
-//http://localhost:8080/loans'
-
 export const request = async () => {
     const env = import.meta.env
     try {
