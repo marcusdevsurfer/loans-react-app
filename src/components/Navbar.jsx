@@ -1,7 +1,7 @@
 export const Navbar = () => {
 
     const handleLogOut = () => {
-        localStorage.removeItem('user')
+        localStorage.clear()
     }
 
     return (
