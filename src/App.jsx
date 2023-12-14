@@ -8,10 +8,10 @@ import { Login } from "./components/Login";
 function App() {
 
   const [session, setSession] = useState(localStorage)
-  const [isLogged, setIsLogged] = useState(false)
+  const [isLogged, setIsLogged] = useState(false)    
 
   useEffect(() => {
-    if(localStorage.length>0){
+    if(session.getItem('user')){
       setIsLogged(true)
     }
   },[session])

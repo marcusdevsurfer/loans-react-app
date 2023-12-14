@@ -1,21 +1,38 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { fetchAllUsers } from "../service/user-service"
+
 export const Login = () => {
 
+    const [users, setUsers] = useState([])
     const [username, setUsername] = useState('')
 
+    const validateInputText = (value) => {
+        const valueTrimed = value.trim()
+        const valueToLowerCase = valueTrimed.toLowerCase()
+        const textValidated = valueToLowerCase
+        return textValidated
+    }
 
     const validateLogin = (e) => {
         e.preventDefault()
         const {target} = e
-        const usernameValue = target.username.value
-        if(usernameValue === 'Marcus'){
-            localStorage.setItem('user',usernameValue)
+        const usernameInputValue = validateInputText(target.username.value)
+        const queryResult = users.find(user => user.name === usernameInputValue)
+        if(queryResult===undefined || queryResult === null){
+            localStorage.clear()
+            alert('No registrado')
             window.location.reload()
-        }else {
-            alert('Acceso denegado')
+        } else {
+            localStorage.setItem('user',queryResult.name)
             window.location.reload()
         }
     }   
+
+    useEffect(() => {
+        fetchAllUsers().then(data => {
+            setUsers(data)
+        })
+    },[])
 
     
 
