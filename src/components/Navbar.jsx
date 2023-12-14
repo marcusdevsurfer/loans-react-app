@@ -7,7 +7,7 @@ export const Navbar = () => {
     return (
         <div className='d-flex justify-content-end w-100' >
             <div className="p-2">
-                <p>Bienvenido, {localStorage.getItem('user')}</p>
+                <p>Bienvenido, <strong>{localStorage.getItem('user').charAt(0).toUpperCase()+localStorage.getItem('user').slice(1)}</strong></p>
             </div>
             <div className="p-2">
                 <form onSubmit={handleLogOut}>
