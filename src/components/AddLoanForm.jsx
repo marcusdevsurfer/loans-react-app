@@ -28,7 +28,8 @@ export const AddLoanForm = () => {
         const loan = {
             person: person,
             quantity: quantity,
-            percent: percent
+            percent: percent,
+            user: localStorage.getItem('user')
         }
 
         if (loan.person === '' || loan.quantity === 0) {
