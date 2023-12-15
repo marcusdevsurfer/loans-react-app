@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { Loan } from "./Loan"
-import { request } from "../helpers/util"
 import { LoansSummary } from "./LoansSummary"
+import { fetchAllLoans } from "../service/loan-service"
 
 const LoansTitle = ({ data }) => (
     data.length > 0
@@ -17,7 +17,7 @@ const LoadingLoans = () => (
     <h2>Cargando..</h2>
 )
 
-const NotExistLoansMessage = ({ data }) => (
+const NotExistLoansMessage = () => (
     <h2>No hay registros</h2>
 )
 
@@ -25,9 +25,10 @@ export const LoansGrid = () => {
 
     const [loansData, setLoansData] = useState([])
     const [isLoaded, setIsLoaded] = useState(false)
-
+        
     useEffect(() => {
-        request()
+
+        fetchAllLoans()
             .then(
                 data => {
                     setLoansData(data)
@@ -37,6 +38,7 @@ export const LoansGrid = () => {
             .catch(error => {
                 setIsLoaded(false)
             })
+            
     }, [])
 
     return (
@@ -48,8 +50,8 @@ export const LoansGrid = () => {
                     <LoansTitle data={loansData} />
                     <LoansSummary data={loansData} />
                     {
-                        loansData.map(loan => (
-                            <Loan key={loan.loanId} loan={loan} />
+                        loansData.filter((loan) => loan.user === localStorage.getItem('user')).map((loan) => (
+                            <Loan key={loan.loanId} loan={loan}></Loan>
                         ))
                     }
                 </div >
