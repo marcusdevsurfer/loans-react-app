@@ -7,25 +7,26 @@ import { Login } from "./components/Login";
 
 function App() {
 
-  const [session, setSession] = useState(localStorage)
-  const [isLogged, setIsLogged] = useState(false)    
+  const [session, setSession] = useState(localStorage.getItem('user'))
+  const [isLogged, setIsLogged] = useState(false)
 
   useEffect(() => {
-    if(session.getItem('user')){
-      setIsLogged(true)
-    }
-  },[session])
+    const userString = localStorage.getItem('user')
+    const userObj = JSON.parse(userString)
+    userObj ? setIsLogged(true) : setIsLogged(false)
+  }, [session])
+
 
   return (
-    isLogged 
-    ?
-    <div className="d-flex flex-column align-items-center">
-      <Navbar />
-      <AddLoanForm />
-      <LoansGrid />
-    </div>
-    :
-    <Login/>
+    isLogged
+      ?
+      <div className="d-flex flex-column align-items-center">
+        <Navbar />
+        <AddLoanForm />
+        <LoansGrid />
+      </div>
+      :
+      <Login />
   )
 }
 
