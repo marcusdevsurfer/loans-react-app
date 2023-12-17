@@ -4,24 +4,22 @@ export const LoansSummary = ({ data }) => {
 
     const [dataFiltered, setDataFiltered] = useState([])
 
+    const user = localStorage.getItem('user')
+    const userObj = JSON.parse(user)
+    const { name } = userObj
 
     const caltLoansTotal = () => {
         let total = 0
         dataFiltered.map((e) => {
-            total = e.quantity+total
+            total = e.quantity + total
         })
-        console.log(total)
         return total
     }
 
     useEffect(() => {
-        const result = data.filter((loan) => loan.user === localStorage.getItem('user'))
-        setDataFiltered(result)  
-    },[])
-
-
-   
-
+        const result = data.filter((loan) => loan.user === name)
+        setDataFiltered(result)
+    }, [])
 
     return (
         <div className='d-flex flex-column align-items-center justify-content-center'>

@@ -25,7 +25,11 @@ export const LoansGrid = () => {
 
     const [loansData, setLoansData] = useState([])
     const [isLoaded, setIsLoaded] = useState(false)
-        
+
+
+    const user = localStorage.getItem('user')
+    const userObj = JSON.parse(user)
+
     useEffect(() => {
 
         fetchAllLoans()
@@ -38,7 +42,7 @@ export const LoansGrid = () => {
             .catch(error => {
                 setIsLoaded(false)
             })
-            
+
     }, [])
 
     return (
@@ -50,7 +54,7 @@ export const LoansGrid = () => {
                     <LoansTitle data={loansData} />
                     <LoansSummary data={loansData} />
                     {
-                        loansData.filter((loan) => loan.user === localStorage.getItem('user')).map((loan) => (
+                        loansData.filter((loan) => loan.user === userObj.name).map((loan) => (
                             <Loan key={loan.loanId} loan={loan}></Loan>
                         ))
                     }
