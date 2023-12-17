@@ -8,6 +8,10 @@ export const AddLoanForm = () => {
     const [quantity, setQuantity] = useState(0)
     const [percent, setPercent] = useState(0)
 
+    const user = localStorage.getItem('user')
+    const userObj = JSON.parse(user)
+    const {name} = userObj
+
     async function postData(url = '', data = {}) {
         const response = await fetch(url, {
             method: 'POST',
@@ -29,7 +33,7 @@ export const AddLoanForm = () => {
             person: person,
             quantity: quantity,
             percent: percent,
-            user: localStorage.getItem('user')
+            user: name
         }
 
         if (loan.person === '' || loan.quantity === 0) {
