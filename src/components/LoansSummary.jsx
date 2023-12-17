@@ -13,7 +13,10 @@ export const LoansSummary = ({ data }) => {
         dataFiltered.map((e) => {
             total = e.quantity + total
         })
-        return total
+        const internationalNumberFormat = new Intl.NumberFormat('en-US')
+        const numberFormated = internationalNumberFormat.format(total)
+        const totalFormated = numberFormated + '.00'
+        return totalFormated
     }
 
     useEffect(() => {
