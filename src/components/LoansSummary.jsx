@@ -33,13 +33,19 @@ export const LoansSummary = ({ data }) => {
                     color: 'white'
                 }}>{dataFiltered.length}</span></p>
             </div>
-            <div>
-                <p>Total: <span className='bg-success' style={{
-                    paddingLeft: '1rem',
-                    paddingRight: '1rem',
-                    color: 'white'
-                }}>${caltLoansTotal()}</span></p>
+            <div className='d-flex'>
+                <div>
+                    <p>Total: <span className='bg-success' style={{
+                        paddingLeft: '1rem',
+                        paddingRight: '1rem',
+                        color: 'white'
+                    }}>${caltLoansTotal()}</span></p>
+                </div>
+                <div>
+                    Hide amount
+                </div>
             </div>
+
         </div>
     )
 }
