@@ -8,11 +8,11 @@ export const Navbar = () => {
 
 
     const handleLogOut = () => {
-        localStorage.clear()
+        sessionStorage.clear()
     }
 
     useEffect(() => {
-        const actualUser = localStorage.getItem('user')
+        const actualUser = sessionStorage.getItem('user')
         const userObj = JSON.parse(actualUser)
         setUser(userObj)
     },[])

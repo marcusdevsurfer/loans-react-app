@@ -7,7 +7,7 @@ export const LoansSummary = ({ data }) => {
 
     const [dataFiltered, setDataFiltered] = useState([])
 
-    const user = localStorage.getItem('user')
+    const user = sessionStorage.getItem('user')
     const userObj = JSON.parse(user)
     const { name } = userObj
 

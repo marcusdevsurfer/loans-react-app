@@ -22,12 +22,12 @@ export const Login = () => {
         const queryResult = users.find(user => user.name === usernameInputValue)
 
         if (queryResult === undefined || queryResult === null) {
-            localStorage.clear()
+            sessionStorage.clear()
             alert('No registrado')
             window.location.reload()
         } else {
             const userJSON = JSON.stringify(queryResult)
-            localStorage.setItem('user', userJSON)
+            sessionStorage.setItem('user', userJSON)
             window.location.reload()
         }
     }

@@ -31,7 +31,7 @@ export const LoansGrid = () => {
     const [isLoaded, setIsLoaded] = useState(false)
 
 
-    const user = localStorage.getItem('user')
+    const user = sessionStorage.getItem('user')
     const userObj = JSON.parse(user)
 
     const loansDataFilteredByUser = loansData.filter((loan) => loan.user === userObj.name)

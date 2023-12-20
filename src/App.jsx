@@ -6,11 +6,11 @@ import { Login } from "./components/Login";
 
 function App() {
 
-  const [session, setSession] = useState(localStorage.getItem('user'))
+  const [session, setSession] = useState(sessionStorage.getItem('user'))
   const [isLogged, setIsLogged] = useState(false)
 
   useEffect(() => {
-    const userString = localStorage.getItem('user')
+    const userString = sessionStorage.getItem('user')
     const userObj = JSON.parse(userString)
     userObj ? setIsLogged(true) : setIsLogged(false)
   }, [session])
