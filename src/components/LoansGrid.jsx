@@ -3,6 +3,7 @@ import { Loan } from "./Loan"
 import { LoansSummary } from "./LoansSummary"
 import { fetchAllLoans } from "../service/loan-service"
 import { AddLoanForm } from "./AddLoanForm"
+import { LoadingLoansSpinner } from "./LoadingLoansSpinner"
 
 const LoansTitle = ({ data }) => (
     data.length > 0
@@ -12,10 +13,6 @@ const LoansTitle = ({ data }) => (
         </div>
         :
         null
-)
-
-const LoadingLoans = () => (
-    <h2>Cargando..</h2>
 )
 
 const NotExistLoansMessage = () => (
@@ -38,7 +35,6 @@ export const LoansGrid = () => {
 
 
     useEffect(() => {
-
         fetchAllLoans()
             .then(
                 data => {
@@ -49,7 +45,6 @@ export const LoansGrid = () => {
             .catch(error => {
                 setIsLoaded(false)
             })
-
     }, [])
 
     return (
@@ -69,8 +64,6 @@ export const LoansGrid = () => {
                 :
                 <NotExistLoansMessage />
             :
-            <div>
-                <LoadingLoans />
-            </div>
+            <LoadingLoansSpinner/>
     )
 }
