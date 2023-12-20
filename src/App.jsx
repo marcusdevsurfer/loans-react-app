@@ -10,8 +10,7 @@ function App() {
   const [isLogged, setIsLogged] = useState(false)
 
   useEffect(() => {
-    const userString = sessionStorage.getItem('user')
-    const userObj = JSON.parse(userString)
+    const userObj = JSON.parse(session)
     userObj ? setIsLogged(true) : setIsLogged(false)
   }, [session])
 
