@@ -8,6 +8,7 @@ export const fetchAllLoans = async () => {
 }
 
 export const deleteLoan = async (e) => {
+    const { target } = e
     const URL_FIX = 'loans/'
     const response = await fetch(ENV.VITE_BASE_URL + URL_FIX + target.value, {
         method: 'DELETE',
