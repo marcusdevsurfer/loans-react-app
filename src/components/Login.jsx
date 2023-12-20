@@ -16,11 +16,8 @@ export const Login = () => {
     const validateLogin = (e) => {
         e.preventDefault()
         const { target } = e
-
         const usernameInputValue = validateInputText(target.username.value)
-
         const queryResult = users.find(user => user.name === usernameInputValue)
-
         if (queryResult === undefined || queryResult === null) {
             sessionStorage.clear()
             alert('No registrado')
