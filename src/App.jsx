@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import { Navbar } from "./components/Navbar";
-import { AddLoanForm } from "./components/AddLoanForm";
 import { LoansGrid } from "./components/LoansGrid";
 import { Login } from "./components/Login";
 
@@ -22,7 +21,6 @@ function App() {
       ?
       <div className="d-flex flex-column align-items-center">
         <Navbar />
-        <AddLoanForm />
         <LoansGrid />
       </div>
       :

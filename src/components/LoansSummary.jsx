@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { FaEye } from "react-icons/fa";
+import { AddLoanForm } from './AddLoanForm';
 
 
 export const LoansSummary = ({ data }) => {
@@ -27,7 +28,7 @@ export const LoansSummary = ({ data }) => {
     }, [])
 
     return (
-        <div className='d-flex flex-column align-items-center justify-content-center'>
+        <div className='mb-3 d-flex flex-column align-items-center justify-content-center'>
             <div>
                 <p>Activos: <span className='bg-secondary' style={{
                     paddingLeft: '1rem',
@@ -52,7 +53,7 @@ export const LoansSummary = ({ data }) => {
                         }
                     }} />
             </div>
-
+            <AddLoanForm />
         </div>
     )
 }
