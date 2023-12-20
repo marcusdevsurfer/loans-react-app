@@ -1,8 +1,7 @@
 import { useState } from "react"
+import { addLoan } from "../service/loan-service"
 
 export const AddLoanForm = () => {
-
-    const env = import.meta.env
 
     const [person, setPerson] = useState('')
     const [quantity, setQuantity] = useState(0)
@@ -13,24 +12,9 @@ export const AddLoanForm = () => {
     const { name } = userObj
 
 
-
-    async function postData(url = '', data = {}) {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
-        return response;
-    }
-
-
-
     const onFormSubmit = (e) => {
-
         e.preventDefault()
-
+        
         const loan = {
             person: person,
             quantity: quantity,
@@ -42,9 +26,9 @@ export const AddLoanForm = () => {
             return
         }
 
-        postData(env.VITE_BASE_URL + 'loans', loan)
-            .then(data => {
-                if (data.ok) {
+        addLoan(loan)
+            .then(response => {
+                if (response.ok) {
                     window.location.reload()
                 }
             })
