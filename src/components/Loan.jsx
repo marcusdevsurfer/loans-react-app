@@ -1,28 +1,7 @@
+import { deleteLoan } from "../service/loan-service"
 
 export const Loan = ({ loan }) => {
-
-  const env = import.meta.env
-
   const { loanId, person, quantity } = loan
-
-  const deleteLoan = (e) => {
-
-    fetch(env.VITE_BASE_URL + 'loans/' + e.target.value, {
-      method: 'DELETE',
-      mode: 'cors',
-      cache: 'no-cache',
-      credentials: 'same-origin',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      redirect: 'follow',
-      referrerPolicy: 'no-referrer',
-    })
-      .then(res => {
-        window.location.reload()
-      })
-
-  }
 
   const formatLoanQuantity = (quantity) => {
     const internationalNumberFormat = new Intl.NumberFormat('en-US')
