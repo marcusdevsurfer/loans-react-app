@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { FaEye } from "react-icons/fa";
+
 
 export const LoansSummary = ({ data }) => {
 
@@ -33,17 +35,22 @@ export const LoansSummary = ({ data }) => {
                     color: 'white'
                 }}>{dataFiltered.length}</span></p>
             </div>
-            <div className='d-flex'>
-                <div>
-                    <p>Total: <span className='bg-success' style={{
-                        paddingLeft: '1rem',
-                        paddingRight: '1rem',
-                        color: 'white'
-                    }}>${caltLoansTotal()}</span></p>
-                </div>
-                <div>
-                    Hide amount
-                </div>
+            <div className='mb-3 d-flex align-items-center'>
+
+                    <input style={{
+                        border : 'none',
+                    }}  disabled={true} id='totalAmount' type="text" className='form-control p-0 text-center' value={caltLoansTotal()} />
+
+                    <FaEye className='fs-2 m-1' onClick={() => {
+                        const totalAmount = document.getElementById('totalAmount')
+                        const {type} = totalAmount
+
+                        if(type === 'text'){
+                            totalAmount.type='password'
+                        }else if(type === 'password'){
+                            totalAmount.type='text'
+                        }
+                    }} />
             </div>
 
         </div>
