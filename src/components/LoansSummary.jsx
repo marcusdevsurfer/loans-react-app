@@ -18,7 +18,7 @@ export const LoansSummary = ({ data }) => {
         })
         const internationalNumberFormat = new Intl.NumberFormat('en-US')
         const numberFormated = internationalNumberFormat.format(total)
-        const totalFormated = numberFormated + '.00'
+        const totalFormated = '$'+numberFormated + '.00'
         return totalFormated
     }
 
