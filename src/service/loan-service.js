@@ -20,7 +20,7 @@ export const deleteLoan = async (e) => {
 }
 
 export const addLoan = async (data = {}) => {
-    const URL_FIX = 'loans/'
+    const URL_FIX = 'loans'
     const response = await fetch(ENV.VITE_BASE_URL + URL_FIX, {
         method: 'POST',
         headers: {
