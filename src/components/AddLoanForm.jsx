@@ -52,7 +52,8 @@ export const AddLoanForm = () => {
     }
 
     return (
-        <>
+        <div className="mb-3 ">
+            
             <button type="button" className="btn btn-sm btn-success" data-bs-toggle="modal" data-bs-target="#addLoanFormModal">
                 Agregar
             </button>
@@ -88,7 +89,7 @@ export const AddLoanForm = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
 
     )
 }
