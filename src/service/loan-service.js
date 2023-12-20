@@ -18,3 +18,15 @@ export const deleteLoan = async (e) => {
     })
     response.status === 200 ? window.location.reload() : console.log(response)
 }
+
+export const addLoan = async (data = {}) => {
+    const URL_FIX = 'loans/'
+    const response = await fetch(ENV.VITE_BASE_URL + URL_FIX, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    });
+    return response;
+}
