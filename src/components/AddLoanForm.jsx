@@ -59,7 +59,7 @@ export const AddLoanForm = () => {
             </button>
 
             <div className="modal fade" id="addLoanFormModal" tabIndex={-1} aria-labelledby="addLoanFormLabel" aria-hidden="true">
-                <div className="modal-dialog">
+                <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-header">
                             <h1 className="modal-title fs-5" id="addLoanFormLabel">Agregar prestamo</h1>
