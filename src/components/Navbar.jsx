@@ -46,20 +46,18 @@ export const Navbar = () => {
                     </ul>
 
                     <div className="nav-item">
-                        <p className="navbar-brand m-0 pe-2 fs-6">Bienvenido, <strong>{name}</strong></p>
-                    </div>
+                        <div className="d-flex">
+                            <p className="navbar-brand m-0 pe-2 fs-6">Bienvenido, <strong>{name}</strong></p>
+                            <form className="" onSubmit={handleLogOut}>
+                                <button type="submit" className="btn btn-sm btn-outline-danger">Cerrar sesion</button>
+                            </form>
 
-                    <div className="nav-item">
-                        <form className="" onSubmit={handleLogOut}>
-                            <button type="submit" className="btn btn-sm btn-outline-danger">Cerrar sesion</button>
-                        </form>
-                    </div>
+                        </div>
 
+                    </div>
 
                 </div>
-
-
-
+                
             </div>
         </nav>
     )
