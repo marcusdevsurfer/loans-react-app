@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 
 import {
     createBrowserRouter,
+    HashRouter,
     RouterProvider,
   } from "react-router-dom";
 
