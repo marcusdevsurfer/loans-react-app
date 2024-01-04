@@ -8,11 +8,16 @@ import {
 
 
 import App from './App'
+import { Finance } from './components/finance/Finance';
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <App/>,
+    },
+    {
+      path: "/finance",
+      element: <Finance/>,
     },
   ]);
 
