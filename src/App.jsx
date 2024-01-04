@@ -18,7 +18,7 @@ function App() {
   return (
     isLogged
       ?
-      <div className="d-flex flex-column align-items-center">
+      <div className="d-flex flex-column">
         <Navbar />
         <LoansGrid />
       </div>
