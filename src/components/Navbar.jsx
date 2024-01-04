@@ -22,29 +22,43 @@ export const Navbar = () => {
     }, [])
 
     return (
+
         <nav className='navbar navbar-expand-lg'>
             <div className="container-fluid">
-                <div className="d-flex m-1">
 
-                    <Link className="btn btn-sm btn-secondary mx-1 d-flex align-items-center" style={{
-                        textDecoration: "none",
-                        color: "white",
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
 
-                    }} to={"/"}>Prestamos
-                    </Link>
+                <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-                </div>
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li className="nav-item">
+                            <Link className="nav-link" to={"/"}>
+                                Prestamos
+                            </Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to={"/finance"}>
+                                Finanzas
+                            </Link>
+                        </li>
+                    </ul>
 
-                <div className="d-flex m-1">
-                    <div className="px-2">
-                        <p>Bienvenido, <strong>{name}</strong></p>
+                    <div className="nav-item">
+                        <p className="navbar-brand m-0 pe-2 fs-6">Bienvenido, <strong>{name}</strong></p>
                     </div>
-                    <div className="px-2">
-                        <form onSubmit={handleLogOut}>
-                            <button type="submit" className="btn-sm btn btn-danger">Cerrar sesion</button>
+
+                    <div className="nav-item">
+                        <form className="" onSubmit={handleLogOut}>
+                            <button type="submit" className="btn btn-sm btn-outline-danger">Cerrar sesion</button>
                         </form>
                     </div>
+
+
                 </div>
+
+
 
             </div>
         </nav>
