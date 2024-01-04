@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 
 import {
     createBrowserRouter,
-    HashRouter,
+    createHashRouter,
     RouterProvider,
   } from "react-router-dom";
 
@@ -11,7 +11,7 @@ import {
 import App from './App'
 import { Finance } from './components/finance/Finance';
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
       path: "/",
       element: <App/>,
